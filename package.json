@@ -1,7 +1,7 @@
 {
-  "name": "kaspa-transaction-report",
+  "name": "@karlsen/transaction-report",
   "version": "0.0.1",
-  "description": "Kaspa transaction report generator",
+  "description": "Karlsen transaction report generator",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
@@ -10,7 +10,14 @@
     "eject": "react-scripts eject",
     "generate": "node index.js"
   },
-  "author": "coderofstuff",
+  "authors": [
+    {
+      "name": "coderofstuff"
+    },
+    {
+      "name": "Karlsen Developers"
+    }
+  ],
   "license": "MIT",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",

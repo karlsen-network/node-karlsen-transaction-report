@@ -1,6 +1,6 @@
 const config = require('./config');
 
-const {formatDate, validateAddress, sompiToKas} = require('./utils');
+const {formatDate, validateAddress, sompiToKls} = require('./utils');
 
 const axios = require('axios').create({
     baseURL: config.apiBase,
@@ -80,15 +80,15 @@ async function generateReport(addresses) {
         };
 
         if (compound || isSendToSelf) {
-            txResult.sendAmount = sompiToKas(feeAmount);
+            txResult.sendAmount = sompiToKls(feeAmount);
             txResult.receiveAmount = 0;
             txResult.feeAmount = 0;
             txResult.description = compound ? 'Fee for Compound transaction' : 'Fee to send to own addresses';
             txResult.label = 'cost';
         } else {
-            txResult.sendAmount = isAllMyInput && !isAllMyOutput ? sompiToKas(sendAmount - receiveAmount - feeAmount) : 0;
-            txResult.receiveAmount = !isSendToSelf && receiveAmount > sendAmount ? sompiToKas(receiveAmount - sendAmount) : 0;
-            txResult.feeAmount = isAnyMyInput && (tx.inputs || []).length ? sompiToKas(feeAmount) : 0;
+            txResult.sendAmount = isAllMyInput && !isAllMyOutput ? sompiToKls(sendAmount - receiveAmount - feeAmount) : 0;
+            txResult.receiveAmount = !isSendToSelf && receiveAmount > sendAmount ? sompiToKls(receiveAmount - sendAmount) : 0;
+            txResult.feeAmount = isAnyMyInput && (tx.inputs || []).length ? sompiToKls(feeAmount) : 0;
         }
 
         return txResult;
