@@ -5,15 +5,15 @@ function formatDate(dt) {
 }
 
 function validateAddress(address) {
-    return /^kaspa:[a-z0-9]{61,63}$/.test(address);
+    return /^karlsen:[a-z0-9]{61,63}$/.test(address);
 }
 
-function sompiToKas(amount) {
+function sompiToKls(amount) {
     return (amount / 100000000).toFixed(8);
 }
 
 module.exports = {
     formatDate,
     validateAddress,
-    sompiToKas,
+    sompiToKls,
 };

@@ -17,7 +17,7 @@ function writeToFile(txs, outputFile) {
         }
 
         if (!tx.compound && !tx.sendToSelf) {
-            writer.write(`"${tx.timestamp}","${tx.sendAmount || ''}","${tx.sendAmount ? 'KAS' : ''}","${tx.receiveAmount || ''}","${tx.receiveAmount ? 'KAS' : ''}","${tx.sendAmount ? tx.feeAmount : ''}","${tx.sendAmount ? 'KAS' : ''}","${tx.txHash}"\n`);
+            writer.write(`"${tx.timestamp}","${tx.sendAmount || ''}","${tx.sendAmount ? 'KLS' : ''}","${tx.receiveAmount || ''}","${tx.receiveAmount ? 'KLS' : ''}","${tx.sendAmount ? tx.feeAmount : ''}","${tx.sendAmount ? 'KLS' : ''}","${tx.txHash}"\n`);
         }
 
         prev = tx;
@@ -48,5 +48,5 @@ async function parseAddresses() {
 if (require.main === module) {
     parseAddresses()
         .then(generateReport)
-        .then((processedTxs) => writeToFile(processedTxs, 'kaspa-transactions.csv'));
+        .then((processedTxs) => writeToFile(processedTxs, 'karlsen-transactions.csv'));
 }

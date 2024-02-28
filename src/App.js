@@ -1,4 +1,4 @@
-import logo from './Kaspa-LDSP-Dark Reverse.svg';
+import logo from './images/Karlsen-LDSP-Dark-Reverse.svg';
 import { Component } from 'react';
 import { CSVLink } from 'react-csv';
 import { Grid } from 'react-loader-spinner';
@@ -8,7 +8,7 @@ import { validateAddress } from './utils';
 import { generateReport } from './report';
 import './App.css';
 
-const DONATION_ADDR = 'kaspa:qq6rz6q40e4t8sft4wsphwwlqm39pzc7ehwsprepe3d5szhkanuagfwd7lxrv';
+const DONATION_ADDR = 'karlsen:qqe3p64wpjf5y27kxppxrgks298ge6lhu6ws7ndx4tswzj7c84qkjlrspcuxw';
 
 class App extends Component {
   constructor(props) {
@@ -75,7 +75,7 @@ class App extends Component {
 
           if (tx.sendAmount) {
             rowData.push(tx.sendAmount);
-            rowData.push('KAS');
+            rowData.push('KLS');
           } else {
             rowData.push('');
             rowData.push('');
@@ -83,7 +83,7 @@ class App extends Component {
 
           if (tx.receiveAmount) {
             rowData.push(tx.receiveAmount);
-            rowData.push('KAS');
+            rowData.push('KLS');
           } else {
             rowData.push('');
             rowData.push('');
@@ -91,7 +91,7 @@ class App extends Component {
 
           if (tx.sendAmount && tx.feeAmount) {
             rowData.push(tx.feeAmount);
-            rowData.push('KAS');
+            rowData.push('KLS');
           } else {
             rowData.push('');
             rowData.push('');
@@ -134,20 +134,20 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <span className="App-banner-text">Transaction Report</span>
+          <span className="App-banner-text">Karlsen Transaction Report</span>
         </header>
 
         <div className="AppContent">
-          <span className="App-instructions">Add your kaspa addressess below (one per line) then click Generate to download your transaction history as a CSV file</span>
+          <span className="App-instructions">Add your karlsen addressess below (one per line) then click Generate to download your transaction history as a CSV file</span>
           <div className="column InputContainer">
             <textarea
               className="AddressesText"
-              alt="kaspa:youradresseshere"
-              placeholder='kaspa:youraddressesgoeshere'
+              alt="karlsen:youradresseshere"
+              placeholder='karlsen:youraddressesgoeshere'
               value={this.state.addresses}
               onChange={(event) => {this.setState({addresses: event.target.value})}}
               rows="5"
-            >kaspa:youradresseshere</textarea>
+            >karlsen:youradresseshere</textarea>
 
             <label className="Checkboxes">
               <input
@@ -182,7 +182,7 @@ class App extends Component {
           <Grid
             height="60"
             width="60"
-            color = '#49EACB'
+            color = '#B1B1B1'
             ariaLabel="grid-loading"
             radius="12.5"
             wrapperStyle={{"marginTop": "1em"}}
@@ -195,7 +195,7 @@ class App extends Component {
             <CSVLink
               className="DownloadLink"
               data={this.state.reportData}
-              filename={"kaspa-transactions-" + (format(new Date(), 'yyyyMMdd-HHmmss')) + ".csv"}
+              filename={"karlsen-transactions-" + (format(new Date(), 'yyyyMMdd-HHmmss')) + ".csv"}
               target="_blank"
             >Download Report</CSVLink> :
             ''
@@ -205,7 +205,7 @@ class App extends Component {
             this.state.hasSuggestions ?
             <div className="column SuggestionSection">
               <span className="App-instructions">
-                These addresses may also belong to you. Check them in the <a href="https://explorer.kaspa.org" target="_blank" rel="noreferrer">explorer</a> and add them to your list if they are yours.
+                These addresses may also belong to you. Check them in the <a href="https://explorer.karlsencoin.com" target="_blank" rel="noreferrer">explorer</a> and add them to your list if they are yours.
               </span>
               <textarea
                 className="AddressesText"
@@ -224,7 +224,7 @@ class App extends Component {
           </div>
           <span>Found this useful? Consider donating at</span>
           <div className="DonationLink">
-            <a href={'https://explorer.kaspa.org/addresses/' + DONATION_ADDR} rel="noreferrer" target="_blank">
+            <a href={'https://explorer.karlsencoin.com/addresses/' + DONATION_ADDR} rel="noreferrer" target="_blank">
               {DONATION_ADDR}
             </a>
           </div>
