@@ -134,7 +134,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
-          <span className="App-banner-text">Transaction Report</span>
+          <span className="App-banner-text">Karlsen Transaction Report</span>
         </header>
 
         <div className="AppContent">
