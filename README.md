@@ -35,8 +35,8 @@ cd node-karlsen-transaction-report
 npm install
 ```
 
-You need to create a file `addresses.txt` and add all your addresses
-- one per line. For example
+You need to create a file `addresses.txt` and add all your addresses,
+one per line. For example
 
 ```
 karlsen:qqe3p64wpjf5y27kxppxrgks298ge6lhu6ws7ndx4tswzj7c84qkjlrspcuxw
