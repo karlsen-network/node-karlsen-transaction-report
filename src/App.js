@@ -182,7 +182,7 @@ class App extends Component {
           <Grid
             height="60"
             width="60"
-            color = '#49EACB'
+            color = '#B1B1B1'
             ariaLabel="grid-loading"
             radius="12.5"
             wrapperStyle={{"marginTop": "1em"}}
