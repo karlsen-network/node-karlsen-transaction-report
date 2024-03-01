@@ -17,8 +17,8 @@ you can host it yourself, to do so please do the following:
 git clone https://github.com/karlsen-network/node-karlsen-transaction-report
 cd node-karlsen-transaction-report
 npm install
-npm run build
 npm install serve
+npm run build
 npx serve --listen=3000
 ```
 
@@ -33,10 +33,11 @@ You can run this tool locally, to use it please do the following:
 git clone https://github.com/karlsen-network/node-karlsen-transaction-report
 cd node-karlsen-transaction-report
 npm install
+npm install esm
 ```
 
 You need to create a file `addresses.txt` and add all your addresses,
-one per line. For example
+one per line. For example:
 
 ```
 karlsen:qqe3p64wpjf5y27kxppxrgks298ge6lhu6ws7ndx4tswzj7c84qkjlrspcuxw

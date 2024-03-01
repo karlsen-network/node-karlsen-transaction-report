@@ -63,8 +63,10 @@ async function generateReport(addresses) {
             // Might have some suggestions here:
             for (const outpoint of outpointedInputs) {
                 if (addresses.indexOf(outpoint.script_public_key_address) === -1) {
-                    // This is a possible suggestion:
-                    suggestedAddresses.add(outpoint.script_public_key_address);
+                    if (outpoint.script_public_key_address !== undefined) {
+                        // This is a possible suggestion:
+                        suggestedAddresses.add(outpoint.script_public_key_address);
+                    }
                 }
             }
         }

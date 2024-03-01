@@ -11,7 +11,7 @@ function writeToFile(txs, outputFile) {
 
     let prev = null;
 
-    txs.forEach((tx) => {
+    txs[0].forEach((tx) => {
         if (prev && prev.txHash == tx.txHash) {
             return;
         }
@@ -22,6 +22,13 @@ function writeToFile(txs, outputFile) {
 
         prev = tx;
     });
+
+    if (txs[1].length !== 0) {
+        console.info('Additional addresses found which may also belong to you:')
+        txs[1].forEach((address) => {
+            console.info(address);
+        });
+    }
 
     writer.end();
 }
