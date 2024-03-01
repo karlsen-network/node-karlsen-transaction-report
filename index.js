@@ -11,7 +11,7 @@ function writeToFile(txs, outputFile) {
 
     let prev = null;
 
-    txs.forEach((tx) => {
+    txs[0].forEach((tx) => {
         if (prev && prev.txHash == tx.txHash) {
             return;
         }
